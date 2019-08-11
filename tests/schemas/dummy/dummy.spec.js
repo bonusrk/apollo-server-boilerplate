@@ -1,6 +1,7 @@
 const { addMockFunctionsToSchema, makeExecutableSchema } = require('graphql-tools');
 const { graphql } = require('graphql');
 const { gql } = require('apollo-server');
+const tools = require('graphql-tools');
 const { merge } = require('lodash');
 const chai = require('chai');
 
@@ -9,22 +10,22 @@ const { Dummy } = require('../../../src/controllers/dummy');
 const { expect } = chai;
 
 const Query = gql`
-  type Query {
-    _empty: String
-  }
-  type Mutation {
-    _empty: String
-  }
+    type Query {
+        _empty: String
+    }
+    type Mutation {
+        _empty: String
+    }
 `;
 
 const q = `
-  query{
-      dummy(id:1){
-        name
-        email
-        nickname
-      }
-  }
+    query{
+        dummy(id:1){
+            name
+            email
+            nickname
+        }
+    }
 `;
 
 const schema = makeExecutableSchema({
