@@ -1,7 +1,6 @@
 const { addMockFunctionsToSchema, makeExecutableSchema } = require('graphql-tools');
 const { graphql } = require('graphql');
 const { gql } = require('apollo-server');
-const tools = require('graphql-tools');
 const { merge } = require('lodash');
 const chai = require('chai');
 
