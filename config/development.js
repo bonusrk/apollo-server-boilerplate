@@ -6,8 +6,8 @@ module.exports = {
     debug: true,
   },
   mongoose: {
-    uri: 'mongodb://localhost:27017/asb',
-    debug: false,
-    log: false,
+    uri: 'mongodb://root:example@localhost:27017/example?authSource=admin',
+    debug: true,
+    log: true,
   },
 };

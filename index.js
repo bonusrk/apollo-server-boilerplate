@@ -2,7 +2,7 @@
 const chalk = require('chalk');
 const config = require('config');
 const server = require('./src/server');
-const mongoose = require('./src/db/mongoose');
+const mongoose = require('./src/libs/mongoose');
 
 mongoose
   .connect(
@@ -41,5 +41,5 @@ server
       await mongoose.disconnect();
     });
     console.log(`🚀 Server ready at ${chalk.blue(`http://localhost:4000${server.graphqlPath}`)}`);
-    console.log(`Enviroment is ${chalk.green(process.env.NODE_ENV)}`);
+    console.log(`Environment is ${chalk.green(process.env.NODE_ENV)}`);
   });
