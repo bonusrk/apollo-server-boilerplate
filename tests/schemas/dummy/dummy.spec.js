@@ -3,18 +3,18 @@ const { graphql } = require('graphql');
 const { gql } = require('apollo-server');
 const { merge } = require('lodash');
 const chai = require('chai');
-
-const { Dummy } = require('../../../src/controllers/dummy');
+const typeDef = require('../../../src/typeDefs/dummy');
+// const resolver = require('../../../src/resolvers/dummy');
 
 const { expect } = chai;
 
 const Query = gql`
-    type Query {
-        _empty: String
-    }
-    type Mutation {
-        _empty: String
-    }
+  type Query {
+    _empty: String
+  }
+  type Mutation {
+    _empty: String
+  }
 `;
 
 const q = `
@@ -28,7 +28,8 @@ const q = `
 `;
 
 const schema = makeExecutableSchema({
-  typeDefs: merge([Query, Dummy]),
+  typeDefs: merge([Query, typeDef]),
+  // resolvers:merge([{}, resolver]);
 });
 
 // default mocks adds 'Hello World' to String field
