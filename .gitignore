@@ -64,3 +64,6 @@ gen
 .DS_Store
 
 yarn.lock
+
+/data/db
+
